@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🛰️ 北斗导航小助手</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei", sans-serif;
+      background: linear-gradient(135deg, #eef7ff 0%, #f7faff 50%, #eefaf7 100%);
+      color: #1f2937;
+    }
+    .page {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 48px 20px 80px;
+    }
+    .hero {
+      text-align: center;
+      margin-bottom: 28px;
+    }
+    .icon { font-size: 56px; }
+    h1 {
+      margin: 10px 0 8px;
+      font-size: 34px;
+      color: #123b63;
+    }
+    .subtitle {
+      margin: 0 auto;
+      max-width: 620px;
+      line-height: 1.7;
+      color: #5b6878;
+      font-size: 16px;
+    }
+    .card {
+      background: rgba(255,255,255,.9);
+      border-radius: 20px;
+      padding: 26px;
+      box-shadow: 0 10px 35px rgba(25, 65, 100, .10);
+      margin-bottom: 20px;
+    }
+    .card h2 {
+      margin: 0 0 16px;
+      font-size: 20px;
+      color: #164e7a;
+    }
+    .topics {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+    .topic {
+      padding: 14px 16px;
+      background: #f5f9fd;
+      border-radius: 12px;
+      line-height: 1.5;
+    }
+    .topic strong { display: block; margin-bottom: 3px; }
+    .hint {
+      text-align: center;
+      color: #64748b;
+      font-size: 14px;
+      margin-top: 18px;
+    }
+    .footer {
+      text-align: center;
+      color: #94a3b8;
+      font-size: 13px;
+      margin-top: 24px;
+    }
+    @media (max-width: 600px) {
+      .page { padding: 28px 14px 60px; }
+      h1 { font-size: 28px; }
+      .topics { grid-template-columns: 1fr; }
+      .card { padding: 20px; }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="page">
+    <section class="hero">
+      <div class="icon">🛰️</div>
+      <h1>北斗导航小助手</h1>
+      <p class="subtitle">
+        欢迎来到卫星导航探索站！<br>
+        学完课程后，继续向 AI 提问，探索北斗、GPS 和卫星导航背后的秘密。
+      </p>
+    </section>
+
+    <section class="card">
+      <h2>🔎 你可以问我什么？</h2>
+      <div class="topics">
+        <div class="topic">
+          <strong>📍 定位原理</strong>
+          卫星是怎样知道我在哪里的？
+        </div>
+        <div class="topic">
+          <strong>🛰️ 北斗系统</strong>
+          北斗卫星导航系统是怎么工作的？
+        </div>
+        <div class="topic">
+          <strong>🌍 GPS 与北斗</strong>
+          GPS 和北斗有什么区别？
+        </div>
+        <div class="topic">
+          <strong>🚗 生活应用</strong>
+          我们身边哪些东西用到了卫星导航？
+        </div>
+      </div>
+      <p class="hint">点击页面右下角的聊天按钮，开始和北斗导航小助手对话 👇</p>
+    </section>
+
+    <p class="footer">卫星导航探索活动 · AI 学习助手</p>
+  </main>
+
+  <!-- Coze Web Chat SDK -->
+  <script src="https://lf-cdn.coze.cn/obj/unpkg/flow-platform/chat-app-sdk/1.2.0-beta.19/libs/cn/index.js"></script>
+
+  <script>
+    new CozeWebSDK.WebChatClient({
+      config: {
+        // 你的 Coze Agent / Bot ID
+        bot_id: '7683909950510628891'
+      },
+
+      componentProps: {
+        title: '🛰️ 北斗导航小助手'
+      },
+
+      auth: {
+        type: 'token',
+
+        // ================================
+        // 注意：
+        // 这里仅用于本地测试。
+        // 不要把真实 PAT Token 直接部署到公开网页。
+        // ================================
+        token: 'cztei_lPC4qB5kacmHYZtnkRymUHG9Pp9o5SpdIbJQWJt1WEIDCEIzfAcP9JC5PXLSCfdjH',
+
+        onRefreshToken: function () {
+          return 'cztei_lPC4qB5kacmHYZtnkRymUHG9Pp9o5SpdIbJQWJt1WEIDCEIzfAcP9JC5PXLSCfdjH';
+        }
+      }
+    });
+  </script>
+</body>
+</html>
